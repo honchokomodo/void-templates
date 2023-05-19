@@ -1,0 +1,28 @@
+# Template file for 'libliftoff'
+pkgname=libliftoff
+version=0.4.1
+revision=1
+build_style=meson
+hostmakedepends="pkg-config"
+makedepends="libdrm-devel"
+short_desc="Lightweight KMS plane library"
+maintainer="Orphan <orphan@localhost>"
+license="MIT"
+homepage="https://gitlab.freedesktop.org/emersion/libliftoff"
+distfiles="https://gitlab.freedesktop.org/emersion/libliftoff/-/releases/v${version}/downloads/libliftoff-${version}.tar.gz"
+checksum=
+make_check=no
+
+post_install() {
+	vlicense LICENSE
+}
+
+libliftoff-devel_package() {
+	depends="libliftoff>=${version}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove "usr/lib/*.so"
+	}
+}
