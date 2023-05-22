@@ -10,7 +10,7 @@ maintainer="Orphan <orphan@localhost>"
 license="MIT"
 homepage="https://gitlab.freedesktop.org/emersion/libliftoff"
 distfiles="https://gitlab.freedesktop.org/emersion/libliftoff/-/releases/v${version}/downloads/libliftoff-${version}.tar.gz"
-checksum=0
+checksum=9f16e3168234d63ad636224061bc88b0e5f0e43a5b4edfa24b61bf9d57a3eb3b
 make_check=no
 
 post_install() {
